@@ -1,1 +1,2 @@
-# sodist
+# Sodist!
+A social distancing game.
