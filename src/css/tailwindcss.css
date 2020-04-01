@@ -197,6 +197,10 @@ summary {
   opacity: 0;
 }
 
+[v-cloak] {
+  @apply hidden;
+}
+
 @tailwind utilities;
 
 body {

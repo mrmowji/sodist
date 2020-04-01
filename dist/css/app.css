@@ -355,6 +355,10 @@ canvas {
 
 /* add extracted components here */
 
+[v-cloak] {
+  display: none;
+}
+
 .bg-white {
   background-color: #fff;
 }
