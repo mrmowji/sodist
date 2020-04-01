@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sodist | A social distancing game</title>
   <meta name="description" content="Keep yourself busy! Keep your distance!">
+  <meta property="og:title" content="Sodist | A social distancing game">
+  <meta property="og:description" content="Keep yourself busy! Keep your distance!">
+  <meta property="og:image" content="https://mrmowji.github.io/sodist/dist/images/conver.png">
+  <meta property="og:url" content="https://mrmowji.github.io/sodist">
+  <meta name="twitter:title" content="Sodist | A social distancing game">
+  <meta name="twitter:description" content="Keep yourself busy! Keep your distance!">
+  <meta name="twitter:image" content="https://mrmowji.github.io/sodist/dist/images/conver.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="dist/css/app.css">
   <script src="dist/js/vue.min.js" defer></script>
@@ -22,7 +30,9 @@
             <span class="text-6xl">{{ timeSpent.toFixed(2) }}</span> <span class="text-md">sec</span>
           </div>
           <div v-if="isANewRecord" class="mt-2 mb-8 text-center">Hooray! A new record!</div>
-          <button type="button" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-8 mt-3 border-blue-700 hover:border-blue-500 rounded-lg block w-full" @click.stop="reset">Play again!</button>
+          <button type="button"
+            class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-8 mt-3 border-blue-700 hover:border-blue-500 rounded-lg block w-full"
+            @click.stop="reset">Play again!</button>
           <div class="flex justify-center mt-2 w-full">
             <button type="button" @click.stop="difficulty = DIFFICULTY.EASY"
               class="outline-none w-2/7 text-sm mx-1 border-green-700 hover:border-green-500 rounded-lg bg-green-500 hover:bg-green-400 text-white px-2 py-1"
@@ -48,4 +58,5 @@
     </canvas>
   </div>
 </body>
+
 </html>
