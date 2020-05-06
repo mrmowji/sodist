@@ -188,7 +188,7 @@ export default function sketch(p) {
 
   function updatePlayer() {
     if (useDeviceOrientation) {
-      player.update({ deltaX: p.rotationX, deltaY: p.rotationY });
+      player.update({ deltaX: p.rotationY, deltaY: p.rotationX });
     } else {
       player.update({ centerX: p.mouseX, centerY: p.mouseY });
     }
