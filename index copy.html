@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full w-full">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-20980483-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-20980483-4');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sodist | A social distancing game</title>
+  <meta name="description" content="Keep yourself busy! Keep your distance!">
+  <meta property="og:title" content="Sodist | A social distancing game">
+  <meta property="og:description" content="Keep yourself busy! Keep your distance!">
+  <meta property="og:image" content="https://mrmowji.github.io/sodist/dist/images/cover.png">
+  <meta property="og:url" content="https://mrmowji.github.io/sodist">
+  <meta name="twitter:title" content="Sodist | A social distancing game">
+  <meta name="twitter:description" content="Keep yourself busy! Keep your distance!">
+  <meta name="twitter:image" content="https://mrmowji.github.io/sodist/dist/images/cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/vue.min.js" defer></script>
+  <script src="js/p5js/p5.js" defer></script>
+  <script src="js/p5js/p5.sound.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body class="h-full w-full overflow-hidden">
+  <div id="app" class="h-full w-full" v-cloak>
+    <transition name="fade">
+      <div v-if="finishedAt !== null" class="h-full w-full flex items-center justify-center fixed top-0 left-0 z-50"
+        style="background: rgba(0,0,0,0.5);">
+        <div class="bg-white rounded-lg p-8 z-50 text-2xl font-normal text-blue-600">
+          <div class="p-6 py-1 bg-blue-100 rounded-lg text-center">
+            <span class="text-6xl">{{ timeSpent.toFixed(2) }}</span> <span class="text-md">sec</span>
+          </div>
+          <div v-if="isANewRecord" class="mt-2 mb-8 text-center">Hooray! A new record!</div>
+          <button type="button"
+            class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-8 mt-3 border-blue-700 hover:border-blue-500 rounded-lg block w-full"
+            @click.stop="reset">Play again!</button>
+          <div class="flex justify-center mt-2 w-full">
+            <button type="button" @click.stop="difficulty = DIFFICULTY.EASY"
+              class="outline-none w-2/7 text-sm mx-1 border-green-700 hover:border-green-500 rounded-lg bg-green-500 hover:bg-green-400 text-white px-2 py-1"
+              :class="difficulty.title == DIFFICULTY.EASY.title ? 'mt-1 border-b-0' : 'border-b-4'">
+              Easy
+            </button>
+            <button type="button" @click.stop="difficulty = DIFFICULTY.MEDIUM"
+              class="outline-none w-3/7 text-sm mx-1 border-orange-700 hover:border-orange-500 rounded-lg bg-orange-500 hover:bg-orange-400 text-white px-2 py-1"
+              :class="difficulty.title == DIFFICULTY.MEDIUM.title ? 'mt-1 border-b-0' : 'border-b-4'">
+              Medium
+            </button>
+            <button type="button" @click.stop="difficulty = DIFFICULTY.HARD"
+              class="outline-none w-2/7 text-sm mx-1 border-red-700 hover:border-red-500 rounded-lg bg-red-500 hover:bg-red-400 text-white px-2 py-1"
+              :class="difficulty.title == DIFFICULTY.HARD.title ? 'mt-1 border-b-0' : 'border-b-4'">
+              Hard
+            </button>
+          </div>
+        </div>
+      </div>
+    </transition>
+    <canvas :width="width * dpr" :height="height * dpr" @mousemove="moveTarget" @click="start" class="w-full h-full"
+      :style="{ cursor: finishedAt === null ? 'none' : 'pointer' }">
+    </canvas>
+  </div>
+
+  <div id="p5_loading" class="loadingclass">
+    Loading ...
+  </div>
+  <script src="js/index.js" defer></script>
+</body>
+
+</html>

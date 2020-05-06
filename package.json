@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tailwindcss": "npx tailwind build src/css/tailwindcss.css -o src/css/app.css && purgecss --config ./purgecss.config.js --output ./dist/css/"
+    "tailwindcss": "npx tailwind build css/tailwindcss.css -o css/app.css"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "npx": "^10.2.2",
-    "purgecss": "^2.1.0",
-    "tailwindcss": "^1.2.0"
+    "tailwindcss": "^1.4.4"
   }
 }
