@@ -1,5 +1,8 @@
 "use strict";
 
+// TODO: use pmouseX and pmouseY and detect collision
+// for cases when mouse is moved really fast
+
 import { config } from "./config.js";
 import { util } from "./util.js";
 import { Obstacle } from "./obstacle.js";
@@ -45,7 +48,6 @@ export default function sketch(p) {
     p.createCanvas(config.canvasWidth, config.canvasHeight);
     prepare();
     reset();
-    console.log(playerImage.width);
     drawBackground();
     drawPlayer();
     drawObstacles();
