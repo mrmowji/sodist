@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full w-full">
+<html lang="en">
 
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -27,31 +27,28 @@
     <meta name="twitter:image" content="https://mrmowji.github.io/sodist/images/cover.png">
     <meta name="twitter:card" content="summary_large_image">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/app.css">
-    <script src="js/p5js/p5.js" defer></script>
-    <script src="js/p5js/p5.sound.js" defer></script>
+    <link rel="stylesheet" href="css/site.css">
+    <script src="js/p5js/p5.min.js" defer></script>
+    <script src="js/p5js/p5.sound.min.js" defer></script>
   </head>
 
-  <body class="h-full w-full overflow-hidden">
-    <div id="p5_loading" class="loading w-full h-full flex justify-center items-center">
+  <body>
+    <div id="p5_loading" class="loading">
       Loading ...
     </div>
 
-    <div id="menu" class="hidden h-full w-full flex items-center justify-center fixed top-0 left-0 z-50"
-        style="background: rgba(0,0,0,0.5);">
-      <div class="bg-white rounded-lg p-8 z-50 text-2xl font-normal text-blue-600">
-        <div class="p-6 py-1 bg-blue-100 rounded-lg text-center">
-          <span class="text-6xl" id="score"></span>
-          <span class="text-md">sec</span>
+    <div id="menu" class="overlay hidden">
+      <div class="menu-card">
+        <div class="score-card">
+          <span class="score" id="score"></span>
+          <span>sec</span>
         </div>
-        <div id="new-record" class="hidden mt-2 mb-8 text-center">Hooray! A new record!</div>
-        <button type="button"
-            class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-8 mt-3 border-blue-700 hover:border-blue-500 rounded-lg block w-full"
-            id="play">Play again!</button>
+        <div id="new-record" class="new-record hidden">Hooray! A new record!</div>
+        <button type="button" class="play-button" id="play">Play again!</button>
       </div>
     </div>
 
-    <script src="js/index.js" defer></script>
+    <script src="js/site.js" defer></script>
   </body>
 
 </html>

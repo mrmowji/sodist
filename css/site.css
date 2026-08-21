@@ -1,0 +1,109 @@
+/* Sodist — hand-written CSS (replaces the Tailwind build)
+   These rules reproduce the exact styles the Tailwind utility
+   classes in index.html used to produce. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e0e0e0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: "Fredoka One", cursive;
+  letter-spacing: -0.5px;
+}
+
+canvas {
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Loading screen (shown while p5 preloads) */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Game-over overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.menu-card {
+  z-index: 50;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  color: #3182ce;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.score-card {
+  padding: 0.25rem 1.5rem;
+  background: #ebf8ff;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.score {
+  font-size: 4rem;
+}
+
+.new-record {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.play-button {
+  display: block;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: #4299e1;
+  color: #ffffff;
+  font-weight: 700;
+  border-bottom-width: 8px;
+  border-bottom-color: #2b6cb0;
+  border-radius: 0.5rem;
+}
+
+.play-button:hover {
+  background: #63b3ed;
+  border-bottom-color: #4299e1;
+}
+
+/* Toggled by sketch.js to show/hide the overlay and new-record text.
+   Must come last so it wins over .overlay's display: flex. */
+.hidden {
+  display: none;
+}
